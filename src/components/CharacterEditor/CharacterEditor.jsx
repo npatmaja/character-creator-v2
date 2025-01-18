@@ -30,6 +30,14 @@ function App() {
 
   return (
     <main className={styles.characterEditor}>
+      {/*
+        by adding the prespective effect here does not meet the requeirement. This
+        box is out of the in-flow as it has position fixed so the ordering element
+        is not effective. Hence, to make the additional effective than all sibling
+        needs to be out of the in-flow: make the `MaxWidthWrapper` has the `relative`
+        position
+      */}
+      <div className={styles.perspectiveEffect}></div>
       <MaxWidthWrapper className={styles.maxWidthWrapper}>
         <header className={styles.header}>
           <h1 className={styles.title}>Create your Character</h1>
@@ -88,6 +96,7 @@ function App() {
           clothesColor={clothesColor}
         />
       </div>
+
     </main>
   );
 }
